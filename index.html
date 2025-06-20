@@ -12,21 +12,46 @@
     .button-row {
       white-space: nowrap;
     }
+    #quantityDisplay {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    #msg {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
   <div class="button-row">
-    <button onclick="console.log(`Cart: $${cartQuantity}`)">View Quantity</button>
-    <button onclick="cartQuantity = cartQuantity + 1; console.log(`Cart: $${cartQuantity}`)">+1</button>
-    <button onclick="cartQuantity = cartQuantity + 2; console.log(`Cart: $${cartQuantity}`)">+2</button>
-    <button onclick="cartQuantity = cartQuantity + 3; console.log(`Cart: $${cartQuantity}`)">+3</button>
-    <button onclick="cartQuantity = 0; console.log('cart reset'); console.log(`Cart: $${cartQuantity}`)">Reset Cart</button>
+    <button onclick="viewQuantity()">View Quantity</button>
+    <button onclick="addToCart(1)">+1</button>
+    <button onclick="addToCart(2)">+2</button>
+    <button onclick="addToCart(3)">+3</button>
+    <button onclick="resetCart()">Reset Cart</button>
+    <input type="number" id="updateInput" placeholder="Enter quantity">
+    <button onclick="updateQuantity()">Update Quantity</button>
+    <button onclick="displayQuantity()">Display Quantity</button>
   </div>
 
-  <script>
-    let cartQuantity = 0;
-  </script>
+  <div id="quantityDisplay">Cart: $0</div>
+
+  <!-- For dom.js functionality -->
+  <p id="msg">Original message</p>
+  <button class="jsbutton">Say Hi</button>
+
+  <!-- Link external JavaScript files -->
+  <script src="script1.js"></script>
+  <script src="dom.js"></script>
 
 </body>
 </html>
