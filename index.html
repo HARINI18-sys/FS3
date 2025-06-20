@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Linking JS File</title>
+  <title>View Quantity</title>
+  <style>
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      display: inline-block;
+    }
+    .button-row {
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body>
-  <h2>Hello from HTML</h2>
 
-  <!-- Link to the external JavaScript file -->
-  <script src="script.js"></script>
+  <div class="button-row">
+    <button onclick="console.log(`Cart: $${cartQuantity}`)">View Quantity</button>
+    <button onclick="cartQuantity = cartQuantity + 1; console.log(`Cart: $${cartQuantity}`)">+1</button>
+    <button onclick="cartQuantity = cartQuantity + 2; console.log(`Cart: $${cartQuantity}`)">+2</button>
+    <button onclick="cartQuantity = cartQuantity + 3; console.log(`Cart: $${cartQuantity}`)">+3</button>
+    <button onclick="cartQuantity = 0; console.log('cart reset'); console.log(`Cart: $${cartQuantity}`)">Reset Cart</button>
+  </div>
+
+  <script>
+    let cartQuantity = 0;
+  </script>
+
 </body>
 </html>
