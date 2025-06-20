@@ -12,7 +12,11 @@
 //for (let i = 0; i < 1e6; i++) sum += i;
 //console.timeEnd("calc");
 
-const x = 10;
-const y = 20;
-const r = eval("x + y");
-console.log(r);  
+//const x = 10;
+//const y = 20;
+//const r = eval("x + y");
+//console.log(r);  
+"use strict";
+let a = 10;
+let b = 20;
+console.log(a + b); 
