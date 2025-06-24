@@ -14,9 +14,11 @@
 //const { reject } = require("async");
 
 //}
+function orderFunction(){
+
 let order=new Promise((resolve,reject)=>
 {
-    let isOverWorking=true;
+    let isOverWorking=false;
     setTimeout(()=>{
     if(isOverWorking){
         resolve("Order is ready");
@@ -26,12 +28,22 @@ let order=new Promise((resolve,reject)=>
 
     },3000);
 });
-order
-.then((message)=> console.log("Success: ",message))
-.catch((error)=>
-{
-    console.log("error: ",error);
-});
+return order;
+}
+async function orderFood() {
+    try{
+        const orderStatus= await orderFunction();
+        console.log(orderStatus);
+    }catch(error){
+        console.log(`Error: ${error}`)
+    }
+}
+orderFood();
+//.then((message)=> console.log("Success: ",message))
+//.catch((error)=>
+//{
+  //  console.log("error: ",error);
+//});
 
 
 //console.log("hey");
@@ -45,3 +57,6 @@ order
 //doTask("Readding book",()=>{
   //  console.log("chapter 10");
 //});
+//function orderFunction(){
+ //   let order
+//}
